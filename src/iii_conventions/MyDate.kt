@@ -20,8 +20,8 @@ enum class TimeInterval {
 }
 
 class DateRange(override val start: MyDate, override val endInclusive: MyDate) : ClosedRange<MyDate>, Iterable<MyDate> {
-    override infix operator fun contains(date: MyDate): Boolean {
-        return start < date  && date <= endInclusive
+    override infix operator fun contains(value: MyDate): Boolean {
+        return start < value && value <= endInclusive
     }
 
     override operator fun iterator(): Iterator<MyDate> {
